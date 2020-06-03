@@ -13,16 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => CountViewModel()),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Extraordinary',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity),
-        home: CountPage())
-    );
+        providers: [
+          ChangeNotifierProvider(create: (context) => CountViewModel()),
+        ],
+        child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Extraordinary',
+            theme: ThemeData(
+                primarySwatch: Colors.blue,
+                visualDensity: VisualDensity.adaptivePlatformDensity),
+            home: CountPage()));
   }
 }

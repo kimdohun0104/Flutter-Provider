@@ -8,13 +8,13 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final mainViewModel = Provider.of<CountViewModel>(context);
     return Scaffold(
-      appBar: _buildAppBar(context),
-      body: Center(
-        child: Text(mainViewModel.count.toString()),
-      ));
+        appBar: _buildAppBar(context),
+        body: Center(
+          child: Text(mainViewModel.count.toString()),
+        ));
   }
 
   _buildAppBar(BuildContext context) => AppBar(
-    title: Text('Detail'),
-  );
+        title: Text('Detail'),
+      );
 }
