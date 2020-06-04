@@ -1,9 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo/state/todo_state.dart';
 
 class AddTodoPage extends StatelessWidget {
+  final contentController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    TodoState todoState = Provider.of<TodoState>(context);
     return Scaffold(
         appBar: AppBar(
           title: Text('Add new todo'),
@@ -14,7 +19,8 @@ class AddTodoPage extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(), hintText: 'Content'),
-                maxLines: 5,
+              maxLines: 5,
+              controller: contentController,
             ),
             SizedBox(height: 10),
             RaisedButton(
@@ -30,7 +36,14 @@ class AddTodoPage extends StatelessWidget {
             SizedBox(height: 10),
             RaisedButton(
               color: Colors.blue,
-              onPressed: () {},
+              onPressed: () async {
+                try {
+                  await todoState.addTodo(contentController.text, '2020-08-08');
+                  Navigator.pop(context);
+                } catch (e) {
+                  Scaffold.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+                }
+              },
               child: Text('Add'),
               textColor: Colors.white,
             )

@@ -5,7 +5,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(),
+      appBar: _buildAppBar(context),
       body: Container(
         child: _buildTodoList(),
       ),
@@ -18,14 +18,16 @@ class MainPage extends StatelessWidget {
     );
   }
 
-  _buildAppBar() => AppBar(
+  _buildAppBar(BuildContext context) => AppBar(
         title: Text('Todo'),
         actions: <Widget>[
           Stack(
             children: <Widget>[
               IconButton(
                 icon: Icon(Icons.history, color: Colors.white),
-                onPressed: null,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/trashcan');
+                },
               ),
               Positioned(
                 right: 8,
@@ -51,7 +53,7 @@ class MainPage extends StatelessWidget {
   _buildTodoList() => ListView.builder(
         itemBuilder: (context, index) {
           return Padding(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.only(top: 20, left: 20, right: 20),
               child: Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
