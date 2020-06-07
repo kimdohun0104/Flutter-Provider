@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo/state/todo_state.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -50,22 +52,26 @@ class MainPage extends StatelessWidget {
         ],
       );
 
-  _buildTodoList() => ListView.builder(
-        itemBuilder: (context, index) {
-          return Padding(
-              padding: EdgeInsets.only(top: 20, left: 20, right: 20),
-              child: Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Colors.lightBlue[200]),
-                child: Text(
-                  'Hello',
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                ),
-              ));
+  _buildTodoList() => Consumer<TodoState>(
+        builder: (context, todoState, child) {
+          return ListView.builder(
+            itemCount: todoState.todos.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                  padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        color: Colors.lightBlue[200]),
+                    child: Text(
+                      todoState.todos[index].content,
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ));
+            },
+          );
         },
-        itemCount: 4,
       );
 }

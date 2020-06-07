@@ -27,5 +27,5 @@ class DatabaseProvider {
 
 Future insertTodo(TodoModel todo) async {
   Database database = await DatabaseProvider.provide();
-  await database.insert('Todo', todo.toJson(), conflictAlgorithm: ConflictAlgorithm.replace);
+  await database.insert('Todo', todo.toJson());
 }
