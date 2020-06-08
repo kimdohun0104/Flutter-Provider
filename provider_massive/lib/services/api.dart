@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:provider_massive/models/comment.dart';
 import 'package:provider_massive/models/post.dart';
 import 'package:provider_massive/models/user.dart';
 
@@ -27,11 +26,5 @@ class Api {
     }
 
     return posts;
-  }
-
-  Future<List<Comment>> getCommentsForPost(int postId) async {
-    final response = await client.get('$endpoint/comments?postId=$postId');
-    Iterable iterable = jsonDecode(response.body);
-    return iterable.map((e) => Comment.fromJson(e));
   }
 }

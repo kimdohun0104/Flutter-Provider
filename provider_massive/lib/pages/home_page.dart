@@ -40,7 +40,8 @@ class HomePage extends StatelessWidget {
       itemBuilder: (context, index) => PostListItem(
             post: posts[index],
             onTap: () {
-              Navigator.pushNamed(context, 'post', arguments: posts[index]);
+              print(posts[index].title);
+              Navigator.pushNamed(context, '/post', arguments: posts[index]);
             },
           ));
 }

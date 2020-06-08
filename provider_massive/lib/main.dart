@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_massive/models/user.dart';
 import 'package:provider_massive/services/authentication_service.dart';
-import 'package:provider_massive/ui/pages/home_page.dart';
-import 'package:provider_massive/ui/pages/login_page.dart';
-import 'package:provider_massive/ui/pages/post_page.dart';
+import 'package:provider_massive/pages/home_page.dart';
+import 'package:provider_massive/pages/login_page.dart';
 
 import 'locator.dart';
 
@@ -30,7 +29,6 @@ class MyApp extends StatelessWidget {
         routes: {
           '/login': (_) => LoginPage(),
           '/home': (_) => HomePage(),
-          '/post': (_) => PostPage()
         },
       ),
     );
