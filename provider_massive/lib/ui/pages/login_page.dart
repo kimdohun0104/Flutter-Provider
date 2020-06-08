@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:provider_massive/base/base_view.dart';
 import 'package:provider_massive/enums/view_state.dart';
-import 'package:provider_massive/locator.dart';
-import 'package:provider_massive/ui/shared/app_colors.dart';
 import 'package:provider_massive/view_models/login_view_model.dart';
 
 class LoginPage extends StatelessWidget {
@@ -10,22 +8,19 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<LoginViewModel>(
-      create: (context) => locator<LoginViewModel>(),
-      child: Consumer<LoginViewModel>(
-        builder: (context, model, child) => Scaffold(
-          backgroundColor: backgroundColor,
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _buildLoginHeader(),
-                LoginInputTextField(_loginController),
-                model.state == ViewState.Busy
-                    ? CircularProgressIndicator()
-                    : _buildLoginButton(model, context)
-              ],
-            ),
+    return BaseView<LoginViewModel>(
+      builder: (context, model, child) => Scaffold(
+        backgroundColor: Colors.yellow,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _buildLoginHeader(),
+              LoginInputTextField(_loginController),
+              model.state == ViewState.Busy
+                  ? CircularProgressIndicator()
+                  : _buildLoginButton(model, context)
+            ],
           ),
         ),
       ),
@@ -38,7 +33,8 @@ class LoginPage extends StatelessWidget {
             color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
       );
 
-  _buildLoginButton(LoginViewModel loginViewModel, BuildContext context) => FlatButton(
+  _buildLoginButton(LoginViewModel loginViewModel, BuildContext context) =>
+      FlatButton(
         child: Text('Login'),
         onPressed: () async {
           var loginSuccess = await loginViewModel.login(_loginController.text);
