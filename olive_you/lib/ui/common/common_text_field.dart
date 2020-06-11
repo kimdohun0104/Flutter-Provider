@@ -3,17 +3,19 @@ import 'package:olive_you/ui/theme/colors.dart';
 
 class CommonTextField extends StatefulWidget {
   final String label;
+  final String hint;
 
-  CommonTextField({this.label});
+  CommonTextField({this.label, this.hint});
 
   @override
-  _CommonTextFieldState createState() => _CommonTextFieldState(label: label);
+  _CommonTextFieldState createState() => _CommonTextFieldState(label: label, hint: hint);
 }
 
 class _CommonTextFieldState extends State<CommonTextField> {
   final String label;
+  final String hint;
 
-  _CommonTextFieldState({this.label});
+  _CommonTextFieldState({this.label, this.hint});
 
   final FocusNode _focusNode = FocusNode();
 
@@ -44,10 +46,12 @@ class _CommonTextFieldState extends State<CommonTextField> {
             EdgeInsets.only(left: 20, top: 18, bottom: 18, right: 20),
         labelText: label,
         labelStyle: TextStyle(
-            color: _focusNode.hasFocus ? colorPrimaryLight : colorGray600),
+            color: _focusNode.hasFocus ? colorPrimaryLight : colorGray[600]),
+        hintText: hint,
+        hintStyle: TextStyle(color: colorGray[600]),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(6),
-            borderSide: BorderSide(color: colorGray500)),
+            borderSide: BorderSide(color: colorGray[500])),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
           borderSide: BorderSide(color: colorPrimaryLight),

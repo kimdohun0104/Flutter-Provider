@@ -38,8 +38,8 @@ class LoginPage extends StatelessWidget {
                   backgroundColor: Colors.white,
                   iconAssetPath: 'assets/icons/ic_email.png',
                   text: '이메일로 로그인',
-                  borderColor: colorGray400,
-                  textColor: colorGray700,
+                  borderColor: colorGray[400],
+                  textColor: colorGray[700],
                   onPressed: () { Navigator.pushNamed(context, '/login/email'); },
                 ),
                 SizedBox(height: 16),
@@ -47,8 +47,9 @@ class LoginPage extends StatelessWidget {
                   backgroundColor: Colors.white,
                   iconAssetPath: 'assets/icons/ic_person_add.png',
                   text: '이메일로 회원가입',
-                  borderColor: colorGray400,
-                  textColor: colorGray700,
+                  borderColor: colorGray[400],
+                  textColor: colorGray[700],
+                  onPressed: () { Navigator.pushNamed(context, '/signup/email'); },
                 ),
               ]),
             )
@@ -92,7 +93,7 @@ class LoginPage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Container(
-              color: colorGray400,
+              color: colorGray[400],
               height: 1,
             ),
             flex: 1,
@@ -101,14 +102,14 @@ class LoginPage extends StatelessWidget {
           Text(
             '또는',
             style: TextStyle(
-              color: colorGray400,
+              color: colorGray[400],
               fontSize: 12,
             ),
           ),
           SizedBox(width: 6),
           Expanded(
             child: Container(
-              color: colorGray400,
+              color: colorGray[400],
               height: 1,
             ),
             flex: 1,

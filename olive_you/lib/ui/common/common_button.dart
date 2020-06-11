@@ -17,14 +17,14 @@ class CommonButton extends StatelessWidget {
         height: 48,
         decoration: BoxDecoration(
           border: Border.all(
-            color: colorGray400,
+            color: colorGray[400],
             width: 2,
           ),
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: colorGray700,
+            color: colorGray[700],
             fontFamily: 'GodoM',
             fontSize: 18,
           ),
