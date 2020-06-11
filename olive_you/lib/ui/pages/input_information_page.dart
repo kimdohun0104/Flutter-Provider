@@ -24,7 +24,10 @@ class InputInformationPage extends StatelessWidget {
                 SizedBox(height: 20),
                 _buildLocationInput(context),
                 SizedBox(height: 40),
-                CommonButton(text: '완료')
+                CommonButton(
+                  text: '완료',
+                  onPressed: () { Navigator.pushNamed(context, '/waitopponent'); }
+                  )
               ],
             ),
           ),

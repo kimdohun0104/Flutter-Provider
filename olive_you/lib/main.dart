@@ -7,6 +7,7 @@ import 'package:olive_you/ui/pages/find_location_page.dart';
 import 'package:olive_you/ui/pages/forget_password_page.dart';
 import 'package:olive_you/ui/pages/input_information_page.dart';
 import 'package:olive_you/ui/pages/login_page.dart';
+import 'package:olive_you/ui/pages/wait_opponent_page.dart';
 
 void main() {
   runApp(OliveYouApp());
@@ -26,6 +27,7 @@ class OliveYouApp extends StatelessWidget {
         '/enter': (_) => EnterPage(),
         '/inputinformation': (_) => InputInformationPage(),
         '/findlocation': (_) => FindLocationPage(),
+        '/waitopponent': (_) => WaitOpponentPage(),
       },
       theme: ThemeData(primaryColor: Colors.white),
     );
