@@ -8,7 +8,7 @@ class WaitOpponentPage extends StatefulWidget {
 }
 
 class _WaitOpponentPageState extends State<WaitOpponentPage> {
-  final _controller = PageController();
+  final _controller = PageController(initialPage: 0);
 
   @override
   void dispose() {
