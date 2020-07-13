@@ -1,0 +1,2 @@
+class UnauthorizedException implements Exception {
+}
