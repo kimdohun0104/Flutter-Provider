@@ -11,23 +11,23 @@ class SignUpModel extends BaseModel {
 
   Future signUp(String email, String password, String reType) async {
     if (!Validator.isEmailValid(email)) {
-      return Future.error('유효하지 않은 이메일입니다');
+      return Future.error('message_invalid_email');
     }
 
     if (password != reType) {
-      return Future.error('비밀번호 재입력이 일치하지 않습니다');
+      return Future.error('message_different_re_type');
     }
 
     if (!Validator.isPasswordValid(password)) {
-      return Future.error('비밀번호는 6자리를 넘겨야 합니다');
+      return Future.error('message_invalid_password');
     }
 
     try {
       await firebaseService.signUp(email, password);
     } on ConflictException {
-      return Future.error('이메일을 사용하는 계정이 이미 존재합니다');
+      return Future.error('message_conflict_email');
     } on InternalException {
-      return Future.error('서버에 문제가 발생했습니다');
+      return Future.error('message_internal_error');
     }
   }
 }

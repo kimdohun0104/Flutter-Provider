@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_tdd_example/localization/translation_delegate.dart';
 import 'package:flutter_tdd_example/ui/login/login_page.dart';
 import 'package:flutter_tdd_example/ui/main/main_page.dart';
 import 'package:flutter_tdd_example/ui/sign_up/sign_up_page.dart';
@@ -23,6 +25,15 @@ class MyApp extends StatelessWidget {
         '/signup': (_) => SignUpPage(),
         '/main': (_) => MainPage()
       },
+      supportedLocales: [
+        Locale('ko'),
+        Locale('en'),
+      ],
+      localizationsDelegates: [
+        TranslationDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
     );
   }
 }

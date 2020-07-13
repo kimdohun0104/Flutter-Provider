@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tdd_example/localization/translation.dart';
 import 'package:flutter_tdd_example/ui/component/common_button.dart';
 import 'package:flutter_tdd_example/ui/component/common_text_field.dart';
 import 'package:flutter_tdd_example/ui/component/progress_dialog.dart';
@@ -34,24 +35,24 @@ class _SignUpBodyState extends State<SignUpBody> {
             child: Column(
               children: [
                 CommonTextField(
-                  hintText: 'Email',
+                  hintText: Translation.of(context).trans('email'),
                   controller: emailController,
                 ),
                 SizedBox(height: 12),
                 CommonTextField(
-                  hintText: 'Password',
+                  hintText: Translation.of(context).trans('password'),
                   controller: passwordController,
                   obscure: true,
                 ),
                 SizedBox(height: 12),
                 CommonTextField(
-                  hintText: 'Re-type',
+                  hintText: Translation.of(context).trans('re_type'),
                   controller: reTypeController,
                   obscure: true,
                 ),
                 SizedBox(height: 24),
                 CommonButton(
-                  text: 'Sign up',
+                  text: Translation.of(context).trans('sign_up'),
                   onPressed: () => _onClickSignUp(model, context),
                 ),
               ],
@@ -63,7 +64,7 @@ class _SignUpBodyState extends State<SignUpBody> {
   }
 
   void _onClickSignUp(SignUpModel model, BuildContext context) async {
-    var pd = getProgressDialog(context, '회원가입 중...');
+    var pd = getProgressDialog(context, Translation.of(context).trans('waiting'));
     await pd.show();
     model
         .signUp(
@@ -72,7 +73,7 @@ class _SignUpBodyState extends State<SignUpBody> {
           reTypeController.text.trim(),
         )
         .then((_) => Navigator.pop(context))
-        .catchError((error) => context.showSnackbar(error.toString()))
+        .catchError((error) => context.showSnackbar(Translation.of(context).trans(error)))
         .whenComplete(() async => await pd.hide());
   }
 }

@@ -1,0 +1,15 @@
+{
+  "sign_up": "Sign up",
+  "email": "email",
+  "password": "password",
+  "re_type": "re-type",
+  "waiting": "Please wait a second...",
+  "login": "login",
+  "do_not_have_account": "Don't have account yet?",
+  "main": "Main",
+  "message_invalid_email": "Email is invalid",
+  "message_different_re_type": "Password re-type is different",
+  "message_invalid_password": "Password is invalid",
+  "message_conflict_email": "Email is already taken",
+  "message_internal_error": "Internal server error"
+}
