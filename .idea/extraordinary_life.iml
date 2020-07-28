@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/counter_application/.dart_tool/flutter_tool/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/counter_application/.dart_tool/flutter_tool/build" />
+      <excludeFolder url="file://$MODULE_DIR$/counter_application/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/counter_application/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_tdd_example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/github/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/github/build" />
+      <excludeFolder url="file://$MODULE_DIR$/olive_you/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/olive_you/build" />
+      <excludeFolder url="file://$MODULE_DIR$/provider_massive/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/provider_massive/build" />
+      <excludeFolder url="file://$MODULE_DIR$/rotating_drawer/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/rotating_drawer/build" />
+      <excludeFolder url="file://$MODULE_DIR$/smaller_drawer/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/smaller_drawer/build" />
+      <excludeFolder url="file://$MODULE_DIR$/todo/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/todo/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
